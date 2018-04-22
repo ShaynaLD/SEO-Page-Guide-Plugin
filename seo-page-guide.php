@@ -21,10 +21,8 @@ add_action( 'wp_enqueue_sctipts', 'add_seopg_files' );
 
 
 /*  */
-$current_user = wp_get_current_user();
-if (user_can( $current_user, 'administrator' )) {
-  // user is an admin
-  ?>
-<div id="seopg-container">THIS IS IT!</div>
+if (current_user_can( 'administrator' )) {  ?>
+
+	<div id="seopg-container">THIS IS IT!</div>
 
 <?php }

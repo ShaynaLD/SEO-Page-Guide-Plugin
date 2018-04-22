@@ -11,3 +11,20 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  seopg
 Domain Path:  /languages
 */
+
+
+/* Register  styles*/
+function add_seopg_files(){
+	wp_enqueue_style('seopg', get_stylesheeet_uri() );
+}
+add_action( 'wp_enqueue_sctipts', 'add_seopg_files' );
+
+
+/*  */
+$current_user = wp_get_current_user();
+if (user_can( $current_user, 'administrator' )) {
+  // user is an admin
+  ?>
+<div id="seopg-container">THIS IS IT!</div>
+
+<?php }
